@@ -47,7 +47,7 @@ function App() {
             type="text"
           />
         </form> */}
-        <div className="flex">
+        <div className="flex  flex-wrap">
           {notes?.map((note) => {
             return <Note key={note.id} note={note} />;
           })}

@@ -27,7 +27,7 @@ const Note = ({ note }) => {
     setToggle(!toggle);
   };
   return (
-    <div key={note.id} className="w-1/3 h-[400px] rounded-sm p-5 mb-10 ">
+    <div key={note.id} className="w-full md:w-1/2 lg:w-1/3   h-[400px] rounded-sm p-5 mb-10 ">
       <div className="bg-[#9ec862] h-10 rounded-sm flex justify-end items-center">
         <form className="h-full flex items-center mr-auto pl-1" action="" onSubmit={handleEditForm}>
           {toggle ? (
