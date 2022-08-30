@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteNote, editNote, editNoteTitle } from '../features/note/noteSlice';
-import debounce from 'lodash.debounce';
 const Note = ({ note }) => {
   const dispatch = useDispatch();
   const [content, setContent] = useState(note.content);
@@ -29,13 +28,17 @@ const Note = ({ note }) => {
   return (
     <div key={note.id} className="w-full md:w-1/2 lg:w-1/3   h-[400px] rounded-sm p-5 mb-10 ">
       <div className="bg-[#9ec862] h-10 rounded-sm flex justify-end items-center">
-        <form className="h-full flex items-center mr-auto pl-1" action="" onSubmit={handleEditForm}>
+        <form
+          className="h-full w-full px-2 flex items-center mr-auto "
+          action=""
+          onSubmit={handleEditForm}
+        >
           {toggle ? (
             <input
               onChange={(e) => setTitle(e.target.value)}
               value={title}
               placeholder="Title..."
-              className="w-1/2 rounded-md"
+              className="w-full rounded-md outline-none px-1"
               type="text"
             />
           ) : (

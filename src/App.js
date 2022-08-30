@@ -7,13 +7,12 @@ import { addNote } from './features/note/noteSlice';
 function App() {
   const dispatch = useDispatch();
   const notes = useSelector((state) => state.note);
-  useEffect(() => {
-    setResult(notes);
-  }, [notes]);
+  // useEffect(() => {
+  //   setResult(notes);
+  // }, [notes]);
 
   const [search, setSearch] = useState('');
   const [result, setResult] = useState(notes);
-  console.log('result', result);
   const handleAddNote = () => {
     const props = {
       id: Math.floor(Math.random() * 1000),

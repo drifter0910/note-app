@@ -1,4 +1,4 @@
-import { createSlice, current } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = [];
 export const noteSlice = createSlice({
@@ -12,7 +12,6 @@ export const noteSlice = createSlice({
       return state.filter((note) => note.id !== payload);
     },
     editNote: (state, { payload }) => {
-      console.log(payload);
       state.map((note) => (note.id === payload.id ? (note.content = payload.content) : note));
     },
     editNoteTitle: (state, { payload }) => {
